@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.convertidorunidades.Database.DatabaseHelper;
+
 public class Converter extends AppCompatActivity {
 
     private TextView resultTextView;
@@ -17,6 +19,7 @@ public class Converter extends AppCompatActivity {
     private RadioGroup convertRadioGroup;
 
     private EditText inputUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +99,6 @@ public class Converter extends AppCompatActivity {
                         }
                         break;
                 }
-
                 resultTextView.setText(String.format("%s %s  %.2f %s", inputUser.getText().toString(), result, v1, Convresult));
             }
         });
