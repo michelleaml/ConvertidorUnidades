@@ -1,7 +1,8 @@
-package com.example.convertidorunidades;
+package com.example.convertidorunidades.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,7 +10,11 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.convertidorunidades.Activities.Result;
 import com.example.convertidorunidades.Database.DatabaseHelper;
+import com.example.convertidorunidades.R;
+
+import java.text.DecimalFormat;
 
 public class Converter extends AppCompatActivity {
 
@@ -21,11 +26,14 @@ public class Converter extends AppCompatActivity {
     private EditText inputUser;
 
     public DatabaseHelper dbHelper;
+
+    Button buttonNext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_convertir);
 
+
+        setContentView(R.layout.activity_convertir);
         resultTextView = findViewById(R.id.resultTextView);
         distanceRadioGroup = findViewById(R.id.distanceRadioGroup);
         convertRadioGroup = findViewById(R.id.convertRadioGroup);
@@ -86,7 +94,7 @@ public class Converter extends AppCompatActivity {
                         }
                         break;
                     case R.id.centimetersRadioButton2:e:
-                        Convresult = "Centímetros";
+                    Convresult = "Centímetros";
                         if (result.equals("Metros")) {
                             v2 = v1 * 100;
                         } else if (result.equals("Pulgadas")) {
@@ -106,8 +114,19 @@ public class Converter extends AppCompatActivity {
                         }
                         break;
                 }
-                dbHelper.addConversion(result, v1, Convresult, v2);
+                DecimalFormat df = new DecimalFormat("#.00"); // Decimals limited to 2
+                dbHelper.addConversion(result, v1, Convresult, Double.parseDouble(df.format(v2)));
                 resultTextView.setText(String.format("%s %s  %.2f %s", inputUser.getText().toString(), result, v2, Convresult));
+            }
+        });
+        buttonNext = findViewById(R.id.next);
+
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Converter.this, Result.class);
+                startActivity(intent);
             }
         });
     }

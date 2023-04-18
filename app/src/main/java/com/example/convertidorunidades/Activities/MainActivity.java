@@ -1,4 +1,4 @@
-package com.example.convertidorunidades;
+package com.example.convertidorunidades.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
