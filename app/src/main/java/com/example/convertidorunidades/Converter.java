@@ -20,7 +20,7 @@ public class Converter extends AppCompatActivity {
 
     private EditText inputUser;
 
-
+    public DatabaseHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +30,10 @@ public class Converter extends AppCompatActivity {
         distanceRadioGroup = findViewById(R.id.distanceRadioGroup);
         convertRadioGroup = findViewById(R.id.convertRadioGroup);
         inputUser = findViewById(R.id.inputUser);
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
 
         Button convertButton = findViewById(R.id.convertButton);
+
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,50 +58,52 @@ public class Converter extends AppCompatActivity {
                 String Convresult = "";
                 String userInput = inputUser.getText().toString();
                 double v1 = Double.parseDouble(userInput);
+                double v2 = 0;
 
                 switch (checkedconvertRadioButtonId) {
-                    case R.id.metersRadioButton2:
+                    case R.id.metersRadioBtn2:
                         Convresult = "Metros";
                         if (result.equals("Pulgadas")) {
-                            v1 = v1 * 0.0254;
+                            v2 = v1 * 0.0254;
                         } else if (result.equals("Centímetros")) {
-                            v1 = v1 / 100;
+                            v2 = v1 / 100;
                         } else if (result.equals("Pies")) {
-                            v1 = v1 * 0.3048;
+                            v2 = v1 * 0.3048;
                         }
                         break;
-                    case R.id.inchesRadioButton2:
+                    case R.id.inchesRadioBtn2:
                         Convresult = "Pulgadas";
                         if (result.equals("Metros")) {
-                            v1 = v1 / 0.0254;
+                            v2 = v1 / 0.0254;
                         } else if (result.equals("Centímetros")) {
-                            v1 = v1 / 2.54;
+                            v2 = v1 / 2.54;
                         } else if (result.equals("Pies")) {
-                            v1 = v1 * 12;
+                            v2 = v1 * 12;
                         }
                         break;
-                    case R.id.centimetersRadioButton2:
+                    case R.id.centimetersRadioBtn2:e:
                         Convresult = "Centímetros";
                         if (result.equals("Metros")) {
-                            v1 = v1 * 100;
+                            v2 = v1 * 100;
                         } else if (result.equals("Pulgadas")) {
-                            v1 = v1 * 2.54;
+                            v2 = v1 * 2.54;
                         } else if (result.equals("Pies")) {
-                            v1 = v1 * 30.48;
+                            v2 = v1 * 30.48;
                         }
                         break;
-                    case R.id.feetRadioButton2:
+                    case R.id.feetRadioBtn2:
                         Convresult = "Pies";
                         if (result.equals("Metros")) {
-                            v1 = v1 / 0.3048;
+                            v2 = v1 / 0.3048;
                         } else if (result.equals("Pulgadas")) {
-                            v1 = v1 / 12;
+                            v2 = v1 / 12;
                         } else if (result.equals("Centímetros")) {
-                            v1 = v1 / 30.48;
+                            v2 = v1 / 30.48;
                         }
                         break;
                 }
-                resultTextView.setText(String.format("%s %s  %.2f %s", inputUser.getText().toString(), result, v1, Convresult));
+                dbHelper.addConversion(result, v1, Convresult, v2);
+                resultTextView.setText(String.format("%s %s  %.2f %s", inputUser.getText().toString(), result, v2, Convresult));
             }
         });
     }
