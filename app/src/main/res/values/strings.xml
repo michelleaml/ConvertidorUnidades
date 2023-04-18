@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ConvertidorUnidades</string>
     <string name="btnStart">Start</string>
+    <string name="btnConvert">Convert</string>
 </resources>
