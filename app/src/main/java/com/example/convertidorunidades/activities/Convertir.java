@@ -1,4 +1,4 @@
-package com.example.convertidorunidades.;
+package com.example.convertidorunidades.activities.;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.example.convertidorunidades.R;
 
 public class Convertir extends AppCompatActivity {
 

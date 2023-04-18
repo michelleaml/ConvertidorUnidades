@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">ConvertidorUnidades</string>
     <string name="btnStart">Start</string>
+<<<<<<< Updated upstream
     <string name="btnConvert">Convert</string>
+=======
+    <string name="History">Convertion History</string>
+    <string name="Repeat_Button">Convertion Screen</string>
+    <string name="Convertion">Convertion</string>
+    <string name="Username">Username</string>
+>>>>>>> Stashed changes
 </resources>
