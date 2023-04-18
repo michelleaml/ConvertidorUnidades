@@ -52,6 +52,10 @@ public class Converter extends AppCompatActivity {
                 int checkedconvertRadioButtonId = convertRadioGroup.getCheckedRadioButtonId();
                 String Convresult = "";
                 String userInput = inputUser.getText().toString();
+                if (!userInput.matches("-?\\d+(\\.\\d+)?")) {
+                    inputUser.setError("Debe ingresar un número válido");
+                    return;
+                }
                 double v1 = Double.parseDouble(userInput);
 
                 switch (checkedconvertRadioButtonId) {
