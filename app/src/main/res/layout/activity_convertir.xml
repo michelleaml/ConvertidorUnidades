@@ -25,13 +25,30 @@
         android:layout_height="44dp"
         android:layout_marginStart="149dp"
         android:layout_marginEnd="148dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="88dp"
         android:backgroundTint="@color/blue_transformer"
         android:text="Calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputUser"
+        app:layout_constraintVertical_bias="0.923" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="176dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#3E5583"
+        android:text="Tabla de Conversiones"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convertButton" />
 
     <RadioGroup
         android:id="@+id/distanceRadioGroup"
@@ -66,7 +83,7 @@
             android:id="@+id/feetRadioButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Feet" />
+            android:text="Pies" />
     </RadioGroup>
 
     <RadioGroup
@@ -102,7 +119,7 @@
             android:id="@+id/feetRadioButton2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Feet" />
+            android:text="Pies" />
     </RadioGroup>
 
     <EditText
@@ -113,7 +130,7 @@
         android:layout_marginTop="43dp"
         android:layout_marginEnd="100dp"
         android:ems="10"
-        android:hint="Input your amount here"
+        android:hint="Ingrese su cantidad aquí"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,24 +142,30 @@
         android:layout_height="27dp"
         android:layout_marginStart="38dp"
         android:layout_marginEnd="253dp"
-        android:layout_marginBottom="132dp"
-        android:text="Current scale"
+        android:text="Metrica inicial"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/distanceRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="127dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginStart="238dp"
         android:layout_marginEnd="46dp"
-        android:layout_marginBottom="120dp"
-        android:text="Convert to scale"
+        android:text="Metrica de conversion"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/convertRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

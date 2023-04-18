@@ -2,4 +2,5 @@
     <string name="app_name">ConvertidorUnidades</string>
     <string name="btnStart">Start</string>
     <string name="btnConvert">Convert</string>
+    <string name="last_conversions_title" />
 </resources>
