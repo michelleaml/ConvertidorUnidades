@@ -25,7 +25,8 @@
         android:layout_marginBottom="98dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/convertRadioGroup"
-        app:layout_constraintTop_toBottomOf="@+id/distanceRadioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/distanceRadioGroup"
+        android:text="@string/btnConvert"/>
 
     <RadioGroup
         android:id="@+id/distanceRadioGroup"
@@ -49,7 +50,7 @@
             android:id="@+id/centimetersRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Centrimetros" />
+            android:text="Centimetros" />
 
         <RadioButton
             android:id="@+id/metersRadioButton"
@@ -61,7 +62,7 @@
             android:id="@+id/feetRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="feet" />
+            android:text="Pies" />
     </RadioGroup>
 
     <RadioGroup
@@ -75,28 +76,32 @@
         app:layout_constraintTop_toTopOf="@+id/distanceRadioGroup">
 
         <RadioButton
-            android:id="@+id/inchesRadioButton2"
+
+            android:id="@+id/inchesRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pulgadas" />
 
         <RadioButton
-            android:id="@+id/centimetersRadioButton2"
+
+            android:id="@+id/centimetersRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Centimetros" />
 
         <RadioButton
-            android:id="@+id/metersRadioButton2"
+
+            android:id="@+id/metersRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Metros" />
 
         <RadioButton
-            android:id="@+id/feetRadioButton2"
+
+            android:id="@+id/feetRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Feet" />
+            android:text="Pies" />
     </RadioGroup>
 
     <EditText
