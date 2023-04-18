@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Converter">
 
 
     <TextView
@@ -76,28 +76,42 @@
         app:layout_constraintTop_toTopOf="@+id/distanceRadioGroup">
 
         <RadioButton
+
             android:id="@+id/inchesRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pulgadas" />
 
         <RadioButton
+
             android:id="@+id/centimetersRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Centimetros" />
 
         <RadioButton
+
             android:id="@+id/metersRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Metros" />
 
         <RadioButton
+
             android:id="@+id/feetRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pies" />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/inputUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="input"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="233dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
