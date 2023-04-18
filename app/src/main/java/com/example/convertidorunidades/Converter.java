@@ -57,11 +57,15 @@ public class Converter extends AppCompatActivity {
                 int checkedconvertRadioButtonId = convertRadioGroup.getCheckedRadioButtonId();
                 String Convresult = "";
                 String userInput = inputUser.getText().toString();
+                if (!userInput.matches("-?\\d+(\\.\\d+)?")) {
+                    inputUser.setError("Debe ingresar un número válido");
+                    return;
+                }
                 double v1 = Double.parseDouble(userInput);
                 double v2 = 0;
 
                 switch (checkedconvertRadioButtonId) {
-                    case R.id.metersRadioBtn2:
+                    case R.id.metersRadioButton2:
                         Convresult = "Metros";
                         if (result.equals("Pulgadas")) {
                             v2 = v1 * 0.0254;
@@ -71,7 +75,7 @@ public class Converter extends AppCompatActivity {
                             v2 = v1 * 0.3048;
                         }
                         break;
-                    case R.id.inchesRadioBtn2:
+                    case R.id.inchesRadioButton2:
                         Convresult = "Pulgadas";
                         if (result.equals("Metros")) {
                             v2 = v1 / 0.0254;
@@ -81,7 +85,7 @@ public class Converter extends AppCompatActivity {
                             v2 = v1 * 12;
                         }
                         break;
-                    case R.id.centimetersRadioBtn2:e:
+                    case R.id.centimetersRadioButton2:e:
                         Convresult = "Centímetros";
                         if (result.equals("Metros")) {
                             v2 = v1 * 100;
@@ -91,7 +95,7 @@ public class Converter extends AppCompatActivity {
                             v2 = v1 * 30.48;
                         }
                         break;
-                    case R.id.feetRadioBtn2:
+                    case R.id.feetRadioButton2:
                         Convresult = "Pies";
                         if (result.equals("Metros")) {
                             v2 = v1 / 0.3048;
